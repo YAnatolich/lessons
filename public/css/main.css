@@ -1,23 +1,58 @@
-.navigation {
-   padding: 20px 0;
-   background: #6699FF;
-    list-style: none; /* прячем маркеры */
+body, html {
+margin:0px;
+padding:0px;
+height: 100%;
 }
+#maket {
+width:800px;
+margin:0 auto;
+min-height: 100%;
 
-.navigation ul{
-    text-align: center;
 }
-.navigation li {
-    
-  display: inline; /* выстраиваем элементы списка в один ряд */
-
-    margin-right: 15px; /* делаем отступ чтобы пункты меню не сливались */
-
+#header{
+height: 74px;
+background-color:#C0C000;
+}
+#left{
+background-color:#00C0C0;
+width:200px;
+float:left;
+}
+#right{
+width:200px;
+background-color:#FFFF00;
+float:right;
+}
+#content{
+background-color:#8080FF;
+margin-left:202px;
+margin-right:202px;
+}
+#footer{
+background-color:#FFC0FF;
+clear:both;
+height: 20px;
+margin-top:-20px;
+width:800px;
+margin-left: auto;
+margin-right: auto;
+}
+#spacer{
+    height:20px;
+}
+/* menu css begin*/
+#nav{
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    width: 755px;
 }
 ul {
 list-style: none;
+
 }
 ul li {
+    
 float: left; /* элементы списка делаем блочными и выстраиваем в ряд */
 height: 20px; /* высоту лучше жестко указать, чтобы выпадающее меню появлялось в предсказуемом месте */
 margin-right: 20px;
@@ -28,6 +63,7 @@ background: #99CCCC;
 padding: 0 5px;
 }
 ul li ul {
+  
 display: none; /* скрываем выпадающе меню */
 position: absolute; /* чтобы положение подменю не влияло на окружение и легко было позиционировать */
 left: 0;
@@ -46,3 +82,7 @@ border-bottom: 1px solid #CCC;
 ul li:hover ul {
 display: block; /* при наведении на пункт меню первого уровня, показывем подменю */
 }
+
+
+
+/* menu css end*/
