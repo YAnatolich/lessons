@@ -21,7 +21,7 @@
             </li>
             <li>Пункт 2 меню </li>
             <li>Пункт 3 меню</li>
-            <li><a href="/application/controller/GuestController">Пункт 4 меню</a></li>
+            <li><a href="/application/controller/GuestController.php">Пункт 4 меню</a></li>
         </ul>
     </div>
     
