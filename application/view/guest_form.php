@@ -23,4 +23,4 @@
   if(datasetTest.dataset) {
     datasetTest.innerHTML = datasetTest.dataset.name;
   }
-</script>
+</script> <script src="/public/js/validate.js"></script>
