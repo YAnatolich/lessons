@@ -83,6 +83,20 @@ ul li:hover ul {
 display: block; /* при наведении на пункт меню первого уровня, показывем подменю */
 }
 
-
+input{
+width: 231px;
+border-radius: 5px 5px 5px 5px; /*Закругляем уголки*/
+}
+.error{
+width: 233px;    
+border: 1px solid red;    
+border-radius: 5px 5px 5px 5px;
+}
+#txt{
+    //-webkit-box-sizing: border-box;
+     //  -moz-box-sizing: border-box;
+       //     box-sizing: border-box;
+    width: 230px;
+}
 
 /* menu css end*/
