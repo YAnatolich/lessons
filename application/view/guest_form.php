@@ -1,15 +1,15 @@
-<form action="GuestController.php" method="POST">
+<form action="GuestController.php" method="POST" onsubmit="return Validate();">
 
-    <input id="username" name="name" >Введите имя 
-    <div id="error"></div>
-    <input id="email" name="email" value="input name">Введите мыло
-    <div id="error1"></div>
+    <input id="username" name="name" placeholder="Введите имя" >Введите имя 
+    <div id="err"></div>
+    <input id="email" name="email" placeholder="Введите email">Введите мыло
+    <div id="err1"></div>
     <textarea id="txt">
     </textarea>Введите ваше сообщение
- 
-  <p><input type="submit"></p>sdfsdf
+    <div id="err2"></div>
+    <p><input  id="button_from" type="submit"></p>sdfsdf
  </form> 
-<p id="dataset-test" data-name="Поддерживается атрибут dataset">
+<!--p id="dataset-test" data-name="Поддерживается атрибут dataset">
   Атрибут dataset не поддерживается
 </p>
 
@@ -20,4 +20,5 @@
   if(datasetTest.dataset) {
     datasetTest.innerHTML = datasetTest.dataset.name;
   }
-</script> <script src="/public/js/validate.js"></script>
+</script-->
+ <script src="/public/js/validate.js"></script>
