@@ -1,5 +1,4 @@
-<!DOCTYPE Html PUBLIC "-//W3C//DTD Html 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -21,7 +20,7 @@
             </li>
             <li>Пункт 2 меню </li>
             <li>Пункт 3 меню</li>
-            <li><a href="/application/controller/GuestController">Пункт 4 меню</a></li>
+            <li><a href="/application/controller/GuestController.php">Пункт 4 меню</a></li>
         </ul>
     </div>
     

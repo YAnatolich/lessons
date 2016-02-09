@@ -7,7 +7,7 @@ function Validate(val1) {
 
 Validate.prototype.trueMail = function() {
   alert( this._val1 );
-  var val3 = "sdasdff@asaf.com";
+  var val3 = "sdasdffasaf.com";
   if ( this._email.test(val3) ) {
 alert("bugaga");
 
