@@ -5,27 +5,51 @@ function Validate(val1) {
 //i take this regular expression from site http://emailregex.com/ it's very complex
 }
 
-Validate.prototype.trueMail = function() {
-  alert( this._val1 );
-  var val3 = "sdasdffasaf.com";
-  if ( this._email.test(val3) ) {
+Validate.prototype.trueMail = function(val) {
+  var eml = document.getElementById("email");
+  var val3 = "sdasdff@asaf.com";
+  eml = eml.value.trim();
+  
+  if ( this._email.test(eml) ) {//function test (using regular expression).
 alert("bugaga");
-
-}else alert("false");
+}else {
+    alert("trueMail");
+    alert(this.className);
+val.className = "error";
+error_username.innerHTML = 'Вы ввели не число. Исправьте, пожалуйста.';
 }
-var mail = new Validate("Зверь");
-mail.trueMail(); // Зверь
+};
 
-email.onblur = function() { 
-  if (isNaN(this.value)) { // введено не число
-    // показать ошибку
-    this.className = "error";
-    error.innerHTML = 'Вы ввели не число. Исправьте, пожалуйста.'
-  }
+Validate.prototype.trueName = function (){
+  var name = document.getElementById("username");
+  name = name.value.trim();
+  if(name == ""){
+     alert("empty input, it's so bad"); 
+    }    
+  alert("username" + name.value);
+  
 };
-email.onfocus = function() {
-  if (this.className == 'error') { // сбросить состояние "ошибка", если оно есть
-    this.className = "";
-    error.innerHTML = "";
-  }
+
+Validate.prototype.trueText = function(){
+    var text1 = document.getElementById("txt");
+    text1 = text1.value;
+    if(text1 == ""){
+        alert ("cool");
+    }
+    alert("text" + text1);
+    
 };
+
+Validate.prototype.offError = function(val){
+    if (val.className == 'error') { // сбросить состояние "ошибка", если оно есть
+    val.className = "";
+    error_username.innerHTML = "";
+    }
+};
+
+
+var mail = new Validate("Зверь");
+//mail.trueText(); // Зверь
+
+email.onblur = mail.trueMail(email);
+email.onfocus = mail.offError(email);
