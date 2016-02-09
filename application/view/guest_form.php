@@ -1,15 +1,24 @@
-<form action="GuestController.php" method="POST">
+<form action="GuestController.php" method="POST" onsubmit="return Validate();">
 
-    <input id="username" name="name" class="">Введите имя 
-    <div id="error_username"></div>
-    
-    <input id="email" name="email" value="email" class="">Введите email
-    <div id="error_email"></div>
-    
-    <textarea id="txt"  rows="7">afsdf11
+    <input id="username" name="name" placeholder="Введите имя" >Введите имя 
+    <div id="err"></div>
+    <input id="email" name="email" placeholder="Введите email">Введите мыло
+    <div id="err1"></div>
+    <textarea id="txt">
     </textarea>Введите ваше сообщение
-    <div id="error_txt"></div>
-    
-    <input id="button" type="submit" disabled></p>
+    <div id="err2"></div>
+    <p><input  id="button_from" type="submit"></p>sdfsdf
  </form> 
-<script src="/public/js/validate.js"></script>
+<!--p id="dataset-test" data-name="Поддерживается атрибут dataset">
+  Атрибут dataset не поддерживается
+</p>
+
+<script type="text/javascript">
+  // удобный доступ к данным через dataset
+  // браузерами пока не поддерживается
+  var datasetTest = document.getElementById('dataset-test');
+  if(datasetTest.dataset) {
+    datasetTest.innerHTML = datasetTest.dataset.name;
+  }
+</script-->
+ <script src="/public/js/validate.js"></script>

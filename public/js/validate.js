@@ -1,55 +1,87 @@
 //without full validate
-function Validate(val1) {
-  this._val1 = val1;
-  this._email = /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i;
-//i take this regular expression from site http://emailregex.com/ it's very complex
-}
+var regemail = /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i;
+// i used this regular expression from site http://emailregex.com/
 
-Validate.prototype.trueMail = function(val) {
-  var eml = document.getElementById("email");
-  var val3 = "sdasdff@asaf.com";
-  eml = eml.value.trim();
+email.onblur = function() { 
   
-  if ( this._email.test(eml) ) {//function test (using regular expression).
-alert("bugaga");
-}else {
-    alert("trueMail");
-    alert(this.className);
-val.className = "error";
-error_username.innerHTML = 'Вы ввели не число. Исправьте, пожалуйста.';
-}
+   if(!regemail.test(email.value)){ // input do not email
+    // показать ошибку
+    this.className = "error";
+    err1.innerHTML = 'Вы ввели неккоректный e-mail. Исправьте, пожалуйста.';
+  
+  }
 };
 
-Validate.prototype.trueName = function (){
-  var name = document.getElementById("username");
-  name = name.value.trim();
-  if(name == ""){
-     alert("empty input, it's so bad"); 
-    }    
-  alert("username" + name.value);
-  
+email.onfocus = function() {
+  if (this.className == 'error') { // сбросить состояние "ошибка", если оно есть
+    this.className = "";
+    err1.innerHTML = "";
+  }
+};
+username.onblur = function() { 
+  if (!this.value) { // введено не число
+    // показать ошибку
+    this.className = "error";
+    err.innerHTML = '.Вы ввели не число Исправьте, пожалуйста.';
+  }
+};;
+username.onfocus = function() {
+  if (this.className == 'error') { // сбросить состояние "ошибка", если оно есть
+    this.className = "";
+    err.innerHTML = "";
+  }
 };
 
-Validate.prototype.trueText = function(){
-    var text1 = document.getElementById("txt");
-    text1 = text1.value;
-    if(text1 == ""){
-        alert ("cool");
+txt.onblur = function() { 
+    var val = this.value;
+    val = val.trim();
+  if (!val) { // введено не число
+    // показать ошибку
+    this.className = "error";
+    err2.innerHTML = 'Вы ввели не число. Исправьте, пожалуйста.';
+  }
+}; ;
+txt.onfocus = function() {
+  if (this.className == 'error') { // сбросить состояние "ошибка", если оно есть
+    this.className = "";
+    err2.innerHTML = "";
+  }
+};
+
+function Validate(){
+    var v_email = email.value.trim();
+    var u_name = username.value.trim();
+    var v_txt = txt.value.trim();
+    var mark = true;
+  
+    if(email.className == "error" || v_email == ""){
+       
+       if(email.className != "error"){
+           email.className = "error";
+       }
+       
+    err1.innerHTML = 'Вы ввели некорректный email. Исправьте, пожалуйста.';
+      mark = false;
     }
-    alert("text" + text1);
     
-};
-
-Validate.prototype.offError = function(val){
-    if (val.className == 'error') { // сбросить состояние "ошибка", если оно есть
-    val.className = "";
-    error_username.innerHTML = "";
+    if(username.className == "error" || u_name == ""){
+        if(username.className != "error"){
+           username.className = "error";
+       }
+       
+    err.innerHTML = 'Вы не ввели имя пользователя. Исправьте, пожалуйста.';
+       mark = false;
     }
-};
-
-
-var mail = new Validate("Зверь");
-//mail.trueText(); // Зверь
-
-email.onblur = mail.trueMail(email);
-email.onfocus = mail.offError(email);
+    
+    if(txt.className == "error" || v_txt == ""){
+         if(txt.className != "error"){
+           txt.className = "error";
+       }
+       
+    err2.innerHTML = 'Вы оставили пустое поле. Исправьте, пожалуйста.';
+        mark = false;
+    }
+    
+   return mark;
+   
+}
