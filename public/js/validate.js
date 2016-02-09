@@ -20,14 +20,14 @@ email.onfocus = function() {
       alert(email.value);
   if (this.className == 'error') { // сбросить состояние "ошибка", если оно есть
     this.className = "";
-    error.innerHTML = "";
+    error1.innerHTML = "";
   }
 };
 username.onblur = function() { 
   if (isNaN(this.value)) { // введено не число
     // показать ошибку
     this.className = "error";
-    error.innerHTML = 'Вы ввели не число. Исправьте, пожалуйста.';
+    error1.innerHTML = 'Вы ввели не число. Исправьте, пожалуйста.';
   }
 };;
 username.onfocus = function() {
