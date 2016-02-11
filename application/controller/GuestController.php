@@ -10,6 +10,12 @@ include("../../application/view/tmp_content.php");
  */
 
 include "../../application/view/guest_form.php";
-echo $_POST["txt"]."asdfsdfsdf";
+echo $_POST["answer"];
+
+
+include("../../application/model/ValidateModel.php");
+
+$var2 = new ValidateModel;
+$var2->validate("2'''''");
 
 include("../../application/view/tmp_bottom.php");
