@@ -4,9 +4,9 @@
     <div id="err"></div>
     <input id="email" name="email" placeholder="Введите email">Введите мыло
     <div id="err1"></div>
-    <textarea id="txt">
+    <textarea id="txt"  name="txt">
     </textarea>Введите ваше сообщение
-    <div id="err2"></div>
+    <div id="err2" ></div>
     <p><input  id="button_from" type="submit"></p>sdfsdf
  </form> 
 <!--p id="dataset-test" data-name="Поддерживается атрибут dataset">

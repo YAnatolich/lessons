@@ -8,8 +8,8 @@ include("../../application/view/tmp_content.php");
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-$_POST["answer"] = "sdf11";
+
 include "../../application/view/guest_form.php";
-echo $_POST["answer"]."asdfsdfsdf";
+echo $_POST["txt"]."asdfsdfsdf";
 
 include("../../application/view/tmp_bottom.php");
