@@ -7,10 +7,11 @@ class ValidateModel extends ConnectModel {
           echo "validateModel";
        //   echo $var."<br/>";
          // echo $this->mysqli;
+          
          echo $var = $this->mysqli->real_escape_string($var);
-      if (!$this->mysqli->query("INSERT into user (name) VALUES ('$var')")) {
-    printf("Ошибка: %s\n", $this->mysqli->sqlstate);
-}
-                 
+      //if (!$this->mysqli->query("INSERT into user (name) VALUES ('$var')")) {
+    //printf("Ошибка: %s\n", $this->mysqli->sqlstate);
+//}
+          return $var;       
     }
 }
