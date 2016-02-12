@@ -16,6 +16,6 @@ echo $_POST["answer"];
 include("../../application/model/ValidateModel.php");
 
 $var2 = new ValidateModel;
-$var2->validate("2'''''");
+$var2->validate("2''''';;'DROP table *'");
 
 include("../../application/view/tmp_bottom.php");
