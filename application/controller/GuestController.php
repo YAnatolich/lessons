@@ -10,12 +10,25 @@ include("../../application/view/tmp_content.php");
  */
 
 include "../../application/view/guest_form.php";
-echo $_POST["answer"];
+if(isset($_POST["username"])){
+$username = $_POST["username"];
+}
+if(isset($_POST["email"])){
+$email = $_POST["email"];}
+if(isset($_POST["txt"]))
+{$txt = $_POST["txt"];}
+echo $_SERVER["REMOTE_ADDR"];
+
+
 
 
 include("../../application/model/ValidateModel.php");
 
 $var2 = new ValidateModel;
-$var2->validate("2''''';;'DROP table *'");
+$var2->validate("2''''';;");
+if (!$var2->mysqli->query("INSERT into user ('$username',) VALUES ('$var2')")) {
+    printf("Ошибка: %s\n", $this->mysqli->sqlstate);
+    
+}
 
 include("../../application/view/tmp_bottom.php");
