@@ -7,7 +7,7 @@
     <textarea id="txt" name="txt" value="sdfsdfasfd">
     </textarea>Введите ваше сообщение
     <div id="err2"></div>
-    <p><input  id="button_from" type="submit"></p>sdfsdf
+    <p><input  id="button_from" type="submit"></p>
  </form> 
 <!--p id="dataset-test" data-name="Поддерживается атрибут dataset">
   Атрибут dataset не поддерживается

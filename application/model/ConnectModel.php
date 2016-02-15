@@ -3,7 +3,6 @@ class ConnectModel{
      public $mysqli2, $mysqli;
 function __construct(){
    
-    echo "afsdfas2323323";
         $this->mysqli = new mysqli("localhost", "root", "NtvysqGfk", "1c");
 
 /* проверка соединения */
@@ -16,7 +15,7 @@ if (mysqli_connect_errno()) {
 if (!$this->mysqli->set_charset("utf8")) {
     printf("Ошибка при загрузке набора символов utf8: %s\n", $this->mysqli->error);
 } else {
-    printf("Текущий набор символов: %s\n", $this->mysqli->character_set_name());
+    printf("Сообщение выведено из ConnectModel.Текущий набор символов: %s\n", $this->mysqli->character_set_name());
 }
 
 //$mysqli- >close();  
