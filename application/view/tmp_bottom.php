@@ -1,27 +1,37 @@
 </div>
 <div id="spacer"> </div>
 </div>
-    <div id="footer">Подвал</div>
+    <div id="footer">
+         <button id="button" onclick="loadPhones()">Загрузить phones.json!</button>
+
+ 
+        Подвал</div>
     
     <!--script src="/public/js/node_modules/node-static/js/server.js"></script-->
-   <button onclick="loadPhones()">Загрузить phones.json!</button>
-
   <script>
     function loadPhones() {
       var xhr = new XMLHttpRequest();
 
-      xhr.open('GET', '/public/js/phones.json', false);
+      xhr.open('GET', '/public/js/phones.json', true);
       xhr.send();
 
-      if (xhr.status != 200) {
-        // обработать ошибку
-        alert('Ошибка ' + xhr.status + ': ' + xhr.statusText);
-      } else {
-        // вывести результат
-        alert(xhr.responseText);
-      }
+xhr.onreadystatechange = function() { // (3)
+  if (xhr.readyState != 4) return;
+
+  button.innerHTML = 'Готово!';
+
+  if (xhr.status != 200) {
+    alert(xhr.status + ': ' + xhr.statusText);
+  } else {
+    alert(xhr.responseText);
+  }
+
+}
+
+button.innerHTML = 'Загружаю...'; // (2)
+button.disabled = true;
     }
   </script>
-
+ 
 </body>
 </html>
